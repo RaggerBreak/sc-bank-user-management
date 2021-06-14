@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.springbank</groupId>
 	<artifactId>user.cmd.api</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0</version>
 	<name>user.cmd.api</name>
 	<description>User Command API project</description>
 	<properties>
@@ -27,6 +27,12 @@
 		</dependency>
 
 		<dependency>
+			<groupId>org.axonframework</groupId>
+			<artifactId>axon-spring-boot-starter</artifactId>
+			<version>4.3.1</version>
+		</dependency>
+
+		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
 			<optional>true</optional>
@@ -40,6 +46,12 @@
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-test</artifactId>
 			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.springbank</groupId>
+			<artifactId>user.core</artifactId>
+			<version>1.0</version>
 		</dependency>
 	</dependencies>
 
