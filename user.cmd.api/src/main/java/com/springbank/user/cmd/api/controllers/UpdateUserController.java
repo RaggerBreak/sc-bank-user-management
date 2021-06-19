@@ -2,6 +2,7 @@ package com.springbank.user.cmd.api.controllers;
 
 import com.springbank.user.cmd.api.commands.UpdateUserCommand;
 import com.springbank.user.cmd.api.dto.BaseResponse;
+import lombok.extern.slf4j.Slf4j;
 import org.axonframework.commandhandling.gateway.CommandGateway;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -12,6 +13,7 @@ import javax.validation.Valid;
 
 @RestController
 @RequestMapping(path = "/api/v1/updateUser")
+@Slf4j
 public class UpdateUserController {
 
     private final CommandGateway commandGateway;
@@ -33,7 +35,7 @@ public class UpdateUserController {
 
         } catch (Exception e) {
             var safeErrorMessage = "Error while processing update user request for id: " + id;
-            System.out.println(e.toString());
+            log.debug(e.toString());
 
             return new ResponseEntity<>(new BaseResponse(safeErrorMessage), HttpStatus.INTERNAL_SERVER_ERROR);
         }

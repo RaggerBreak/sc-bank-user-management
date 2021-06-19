@@ -2,6 +2,7 @@ package com.springbank.user.cmd.api.controllers;
 
 import com.springbank.user.cmd.api.commands.RemoveUserCommand;
 import com.springbank.user.cmd.api.dto.BaseResponse;
+import lombok.extern.slf4j.Slf4j;
 import org.axonframework.commandhandling.gateway.CommandGateway;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/v1/removeUser")
+@Slf4j
 public class RemoveUserController {
 
     private final CommandGateway commandGateway;
@@ -29,7 +31,7 @@ public class RemoveUserController {
 
         } catch (Exception e) {
             var safeErrorMessage = "Error while processing delete user request for id: " + id;
-            System.out.println(e.toString());
+            log.debug(e.toString());
 
             return new ResponseEntity<>(new BaseResponse(safeErrorMessage), HttpStatus.INTERNAL_SERVER_ERROR);
         }
