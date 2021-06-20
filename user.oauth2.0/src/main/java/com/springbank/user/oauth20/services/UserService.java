@@ -25,7 +25,8 @@ public class UserService implements UserDetailsService {
 
         var account = user.get().getAccount();
 
-        return User.withUsername(username)
+        return User
+                .withUsername(username)
                 .password(account.getPassword())
                 .authorities(account.getRoles())
                 .accountExpired(false)

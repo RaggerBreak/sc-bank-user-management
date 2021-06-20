@@ -23,7 +23,7 @@ public class AuthServerConfig extends AuthorizationServerConfigurerAdapter {
     @Value("${security.oauth2.client.client-secret}")
     private String clientSecret;
 
-    @Value("${security.oauth2.client.signing-key")
+    @Value("${security.oauth2.client.signing-key}")
     private String signingKey;
 
     @Value("${security.oauth2.client.token-validity-seconds}")
